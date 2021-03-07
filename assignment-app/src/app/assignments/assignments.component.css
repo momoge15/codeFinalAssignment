@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.ajouterBtn {
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.rendu {
+  color: green;
+}
+
+.nonrendu {
+  color: red;
+  background-color: yellow;
+  border: 2px dashed orange;
+  padding: 2px;
+}
+
+
+
+.gros {
+  font-size: 40px;
+}
+
+.example-viewport {
+  height: 800px;
+  width: auto;
+  border: none;
+}
+
+#example-item {
+  height: 30px !important;
+}
+
+.example-card {
+  max-width: 300px;
+}
+
+.example-header-image {
+
+  background-size: cover;
+}

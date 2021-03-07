@@ -1,0 +1,84 @@
+<main class="">
+
+
+  <div class="row">
+
+    <div class="col-md-9" style="padding-left:30px">
+      <label class="form-control">Liste des assignments</label>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+        <mat-tab label="Assignments rendus">
+          <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport" #scroller>
+            <div class="row">
+              <mat-card *cdkVirtualFor="let a of  assignments"  routerLink="/assignment/{{a.id}}"  (click)="assignmentClique(a);" class="col-md-3" style = "border-radius: 10px 10px; border: 1px solid black; margin-top: 10px ; margin-left: 20px;">
+                <div>
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image" style="background-image: url('../../assets/images/photoProf/{{a.matiere.prof}}.png');"></div>
+                    <mat-card-title>{{a.matiere.prof}}</mat-card-title>
+                    <mat-card-subtitle>{{a.matiere.titre}}</mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      Assignment : {{a.nom}} <br/>
+                      Etudiant : {{a.etudiant}} <br/>
+                      Note : {{a.note}} <br/>
+                      Remarque : {{a.remarque}} <br/>
+                      DateRendu : {{a.dateDeRendu | date}} <br/>
+                    </p>
+                  </mat-card-content>
+
+                </div>
+              </mat-card>
+            </div>
+          </cdk-virtual-scroll-viewport>
+
+        </mat-tab>
+        <mat-tab label="Assignments nonRendus">
+          <div class="row">
+            <mat-card *ngFor="let a of  assignmentss"  routerLink="/assignment/{{a.id}}"  (click)="assignmentClique(a);" class="col-md-2" style = "border-radius: 10px 10px; border: 1px solid black; margin-top: 10px ; margin-left: 20px;">
+              <div>
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image" style="background-image: url('../../assets/images/photoProf/{{a.matiere.prof}}.png');"></div>
+                  <mat-card-title>{{a.matiere.prof}}</mat-card-title>
+                  <mat-card-subtitle>{{a.matiere.titre}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <p>
+                    Assignment : {{a.nom}} <br/>
+                    Etudiant : {{a.etudiant}} <br/>
+                    DateRendu : {{a.dateDeRendu | date}} <br/>
+                  </p>
+                </mat-card-content>
+
+              </div>
+            </mat-card>
+          </div>
+
+        </mat-tab>
+
+      </mat-tab-group>
+
+    </div>
+
+
+    <div class="col-md-3">
+      <app-add-assignment></app-add-assignment>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+</main>
+
+
+

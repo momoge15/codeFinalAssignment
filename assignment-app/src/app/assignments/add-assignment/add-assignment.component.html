@@ -1,0 +1,82 @@
+<form ngForm  #assignmentForm>
+  <div class="form-control">Ajouter Assignments</div>
+  <div class="" style="margin-top: 70px;">
+
+    <div class="row">
+
+      <div class="col-sm-8 offset-sm-2">
+
+        <div>
+          <form ngForm class="form" #assignmentForm>
+            <div class="form-group">
+              <label for="id">Titre du devoir</label>
+              <input matInput  type="text" [(ngModel)]="nomDevoir" required name="nom" class="form-control"  id="nom" aria-describedby="idHelp" placeholder="Titre devoir" required=required>
+
+
+              <label style="padding-top:10px" for="name">matiere</label>
+              <div class="" style="padding-top:0px">
+                <div id='content' style="margin: 0px auto; width:300px; padding-top: 40px; backgrond-color:white;">
+                    <ejs-dropdownlist id='employees'  [dataSource]='matieres' [fields]='fields' [popupHeight]='height'  [placeholder]='watermark'   style="margin-top: -40px">
+                        <ng-template #headerTemplate>
+                            <div class="head"> <span class="photo">Prof</span> <span style="margin-left:17px;">Matiere</span></div>
+                        </ng-template>
+                        <ng-template  #itemTemplate let-matieres>
+                            <div><img class="empImage" src="../../../assets/images/photoProf/{{matieres.prof}}.png" alt="matiere"  (click)="getmatiereclique(matieres)"/>
+                                <div class="ename" (click)="getmatiereclique(matieres)"> {{matieres.matiere}} </div>
+                                <div class="job" (click)="getmatiereclique(matieres)"> {{matieres.prof}} </div>
+                            </div>
+                        </ng-template>data
+                        <ng-template #valueTemplate let-matieres>
+                            <div><img class="valueTemp" src="../../../assets/images/photoProf/{{matieres.prof}}.png" (click)="getmatiereclique(matieres)" height="26px" width="26px" alt="matiere" />
+                                <div class="name"> {{matieres.matiere}} </div>
+                            </div>
+                        </ng-template>
+                    </ejs-dropdownlist>
+                </div>
+              </div>
+              <label for="id">Etudiant</label>
+              <input  type="text" [(ngModel)]="etudiant" required name="nom" class="form-control"  id="etudiant" aria-describedby="idHelp" placeholder="Nom etudiant">
+
+
+              <label for="email">Note</label>
+              <input type="text" [(ngModel)]="note" name="note" class="form-control"  id="note"
+                placeholder="Note">
+
+
+              <label for="description">Remarque</label>
+              <textarea [(ngModel)]="remarque" name="remarque" class="form-control"  id="remarque">
+              </textarea>
+
+            </div>
+            <button  class="btn btn-danger" style="color:black" color="primary" (click)="onSubmit($event); assignmentForm.reset();">
+              Ajouter un devoir
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+<div>
+{{titre}}
+</div>
+
+<div>
+  {{prof}}
+  </div>
+
+  <ejs-toast></ejs-toast>
+
+
+  <ejs-toast #defaulttoast (created)="onCreate()" [animation]="showAnimation"><ng-template #content>
+     <div>{{message}}</div>
+      </ng-template> <ng-template #title>
+   <div>
+     Message
+    </div></ng-template></ejs-toast>'
+
+
+
+

@@ -1,0 +1,19 @@
+.formContainer
+ {
+  margin:auto;
+  margin-top:80px;
+
+  width:20%;
+  padding:10px;
+  border:dashed;
+  border: dashed dashed 2px black;
+ }
+ .marauto
+ {
+   margin:auto;
+ }
+ .smallimage{
+   height:200px;
+   width:200px;
+
+ }

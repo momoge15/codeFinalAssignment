@@ -1,0 +1,59 @@
+
+<body class="divcover">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark pink ie-nav fixed-top" [containerInside]="false">
+    <mdb-navbar-brand>
+      <div class="container-fluid">
+        <a class="navbar-brand"  routerLink="/home">
+          <img src="../assets/images/iconassign.jpeg" alt="" width="30" height="24" class="d-inline-block align-top rounded">
+          <strong style="margin-left:10px;">{{titre}}</strong>
+        </a>
+      </div>
+
+
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active waves-light" mdbWavesEffect>
+                <a class="nav-link" [hidden]="!voir" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+
+
+        </ul>
+        <ul class="navbar-nav nav-flex-icons" [hidden]='!voir'>
+
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <a class="nav-link"><mdb-icon fas icon="user-check"></mdb-icon>{{this.assignmentsService.user.login}}</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <a class="nav-link" (click)="deconnecter();" ><mdb-icon fas icon="sign-out-alt"></mdb-icon>Deconnecter</a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>
+
+  <div class="container-fluid" >
+    <p hidden='true'>
+
+      <button mat-flat-button color="primary" (click)="peuplerLaBase();">Peupler la base</button>
+
+
+
+    </p>
+
+    <div style="margin-top: 80px;">
+      Modification effectuée par : <b style="color: red">Assi Maurel Gemeri</b> et  <b style="color: red">Traoré Nonla Docklo</b> de Côte d'Ivoire
+    </div>
+
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</body>
+
+
+
+

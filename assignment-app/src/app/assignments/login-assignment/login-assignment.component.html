@@ -1,0 +1,34 @@
+<div>
+
+  <div class="smallimage marauto circle img"><img src="../assets/images/admin-settings-male.png" class="smallimage marauto"/></div>
+  <div class="col-sm-10 col-md-7 col-xl-7 form formContainer">
+    <form ngForm>
+      <div class="form-group">
+        <label>Admin</label>
+        <input type="text" class="form-control" [(ngModel)]="userlogin" name="userlogin">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password">
+      </div>
+
+      <div class="form-group">
+        <button mat-raised-button class="btn btn-danger btn-block" (click)="connecter()">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>
+<div>Les identifiants</div>
+<div>
+  Username : test , Password : test , admin= true
+</div>
+<div>
+  Username : admin , Password : test , admin= false
+</div>
+<div>
+  Username : admins , Password : admins , admin= true
+</div>
+
